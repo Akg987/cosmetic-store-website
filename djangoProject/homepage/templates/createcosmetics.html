@@ -1,0 +1,14 @@
+<div class="container">
+<form action="Create" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{% for field in forms %}
+	<div class="movie">
+		{{ field.label_tag }}
+		{{ field }}
+	</div>
+
+	{% endfor %}
+	<div class="invalid-feedback">{{ field.errors }}</div>
+	<button type="submit">save</button>
+</form>
+</div>

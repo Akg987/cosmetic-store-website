@@ -1,0 +1,45 @@
+{% extends "_layout.html" %}
+{% block forms %}
+<form action="checklogin" method="post">
+  {% csrf_token %}
+  {% for item in forms %}
+    <div class="form-group first">
+      {{ item.label_tag }}
+      {{ item }}
+    </div>
+  {% endfor %}
+
+
+<input type="submit" value="Login" class="btn btn-block py-2 btn-primary checklogin">
+
+
+<span class="text-center my-3 d-block">or</span>
+
+
+<div class="">
+<a href="register" class="btn btn-block py-2 btn-facebook">
+    signup
+</a>
+
+</div>
+</form>
+{% endblock %}
+
+
+{% block scripts %}
+	<script>
+		$(".checklogin").click(function (){
+			$.ajax({
+				    type: "GET",
+				    url: "http://127.0.0.1:8000/auth/checkloginAjaxs/"+$("#id_UserName").val()+"/"+$("#id_Password").val(),
+				    beforeSend: function(){
+		                alert("ارسال شد");
+				    },
+				    success:function(result){
+		                alert(result);
+				    },
+				    error: function(e){}
+        });
+		});
+	</script>
+{% endblock %}

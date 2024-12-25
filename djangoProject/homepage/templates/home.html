@@ -1,0 +1,164 @@
+{% extends '_layouthomepage.html' %}
+
+{% load static %}
+{% block User %}
+<li>
+	{% if user_st.State == False %}
+	<a href="/auths/" style="background: #F0DEBA">Login</a>
+	{% endif %}
+
+		{% if user_st.State == True %}
+		<a href="/homepage/profile" style="background: #F0DEBA">{{ user_st.User }}</a>
+        {% endif %}
+</li>
+{% endblock %}
+
+{% block item %}
+	  <div class="section most-played">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>Shop</h6>
+            <h2>All</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="shop.html">View All</a>
+          </div>
+        </div>
+
+
+
+
+
+
+	{% for item in cosmetics %}
+
+		<div class="col-lg-2 col-md-6 col-sm-6">
+		<form action="productdetails" method="get" enctype="multipart/form-data">
+	 {% csrf_token %}
+
+          <div class="item" id="{{ item.id }}">
+            <div class="thumb">
+              <a href="{% url 'productdetails' id=item.id %}"><img src="{{ item.image.url }}" alt="{{ item.title }}"></a>
+				<span class="price-item">{{ item.price }}$</span>
+            </div>
+            <div class="down-content">
+                <span class="category">{{ item.category }}</span>
+                <h4>{{ item.title }}</h4>
+                <a href="{% url 'productdetails' id=item.id %}" class="buttonproduct">View</a>
+            </div>
+          </div>
+			</form>
+        </div>
+
+	{% endfor %}
+
+	</div>
+          </div>
+        </div>
+
+{% endblock %}
+
+
+
+
+{% block search %}
+<div class="col-lg-6">
+    <div class="caption header-text">
+        <div class="search-input">
+
+            <form action="" method="post" class="frm-getdata" enctype="multipart/form-data">
+				{% csrf_token %}
+                <input type="hidden" name="tokens" value="aref21312kodp&(3423&">
+                <div class="form-group text-right">
+                    <input type="text" placeholder="Type Something" id="searchText" name="search" />
+                    <button id="searchbutton" type="button">Search Now</button> <!-- Trigger the search with GetData() -->
+                </div>
+            </form>
+            <div class="wite"></div>
+
+           <div id="searchbackground"  style="background: #F2DCB1;border-radius: 30px;padding: 30px; height: 400px; overflow-y: auto;">
+	           <div class="row">
+                    <div class="col-lg-4">
+					<div class="searchresult">
+	                {% csrf_token %}
+                    <!-- Dynamic content will be inserted here -->
+				  </div>
+                    </div>
+           </div>
+	        </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+{% block category %}
+	<div class="section categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Categories</h6>
+            <h2>Top Categories</h2>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Skin Care</h4>
+            <div class="thumb">
+              <a href="productdetails.html"><img src="{% static 'assets/images/Skin Care.jpg' %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Makeup</h4>
+            <div class="thumb">
+              <a href="productdetails.html"><img src="{% static 'assets/images/Makeup.jpg' %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Hair Care</h4>
+            <div class="thumb">
+              <a href="productdetails.html"><img src="{% static 'assets/images/Hair Care.jpg' %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Bath and Body</h4>
+            <div class="thumb">
+              <a href="productdetails.html"><img src="{% static 'assets/images/Bath and Body.jpg' %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Fragrances</h4>
+            <div class="thumb">
+              <a href="productdetails.html"><img src="{% static 'assets/images/Fragrances.jpg' %}" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'assets/js/script_home.js' %}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{% endblock %}

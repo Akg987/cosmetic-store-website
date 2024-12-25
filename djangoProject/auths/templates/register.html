@@ -1,0 +1,28 @@
+{% extends "_layout.html" %}
+
+{% block forms %}
+
+  <form action="registerAction" method="post">
+    {% csrf_token %}
+	  {% for item in forms %}
+  <div class="form-group first">
+    {{ item.label_tag }}
+    {{ item }}
+
+</div>
+  {% endfor %}
+  <input type="submit" value="Signup" class="btn btn-block py-2 btn-primary">
+
+
+<span class="text-center my-3 d-block">or</span>
+
+
+<div class="">
+<a href="logins" class="btn btn-block py-2 btn-facebook">
+   Login
+</a>
+
+</div>
+  </form>
+
+{% endblock %}

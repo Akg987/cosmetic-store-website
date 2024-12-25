@@ -1,0 +1,156 @@
+* {
+  font-family: "Poppins";
+}
+
+
+body {
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F0DEBA;
+  height: 100vh;
+}
+
+.screanmainauths {
+  background: #FAFDE6;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+  box-shadow: 0 0 2em #FAFDE6;
+  gap: 2em;
+}
+.screanmainauths .logo {
+  margin-top: 8px;
+}
+.screanmainauths .user {
+  background: white;
+  box-shadow: 0 0 2em #e6e9f9;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: #4d4d4d;
+  margin-top: -3em;
+  margin-bottom: 70;
+}
+.screanmainauths .user input {
+  outline: none;
+  border: none;
+}
+.screanmainauths .user input::-moz-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .user input:-ms-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .user input::placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .email {
+  background: white;
+  box-shadow: 0 0 2em #e6e9f9;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: #4d4d4d;
+  margin-top: -3em;
+
+}
+.screanmainauths .email input {
+  outline: none;
+  border: none;
+}
+.screanmainauths .password input::-moz-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .password input:-ms-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .password input::placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .email input::-moz-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .email input:-ms-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .email input::placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .email ion-icon {
+  color: #4d4d4d;
+  margin-bottom: -0.2em;
+}
+.screanmainauths .password {
+  background: white;
+  box-shadow: 0 0 2em #e6e9f9;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-radius: 20px;
+  color: #4d4d4d;
+  margin-top: 20;
+  margin-bottom: 15;
+}
+.screanmainauths .password input {
+  outline: none;
+  border: none;
+}
+.screanmainauths .password input::-moz-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .password input:-ms-input-placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .password input::placeholder {
+  color: black;
+  font-size: 0.9em;
+}
+.screanmainauths .password ion-icon {
+  color: #4d4d4d;
+  margin-bottom: -0.2em;
+}
+.screanmainauths .password .show-hide {
+  margin-right: -5em;
+}
+.screanmainauths .login {
+  padding: 1em;
+  background: #3e4684;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  width: -webkit-fill-available;
+  margin-bottom: inherit;
+}
+.screanmainauths .footer {
+  display: flex;
+  font-size: 0.7em;
+  color: #5e5e5e;
+  gap: 14em;
+}
+.screanmainauths .footer span {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
